@@ -1,6 +1,6 @@
 ﻿using Grpc.Core;
 using grpcClient.Dtos;
-using grpcServer.Services;
+using grpcClient.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace grpcClient.Controllers

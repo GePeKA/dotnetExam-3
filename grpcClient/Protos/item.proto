@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "grpcServer.Services";
+option csharp_namespace = "grpcClient.Services";
 
 package item;
 
