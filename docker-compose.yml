@@ -1,0 +1,17 @@
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse-server
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+      - "9009:9009"
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+    environment:
+      - CLICKHOUSE_DB=dotnetExam
+      - CLICKHOUSE_USER=admin
+      - CLICKHOUSE_PASSWORD=secretPassword
+
+volumes:
+  clickhouse_data:

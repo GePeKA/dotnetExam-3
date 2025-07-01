@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+option csharp_namespace = "grpcServer.Services";
+
+package item;
+
+service ItemGrpcService {
+  rpc GetItems (GetItemsRequest) returns (GetItemsResponse);
+  rpc AddItem (AddItemRequest) returns (AddItemResponse);
+  rpc UpdateItem (UpdateItemRequest) returns (UpdateItemResponse);
+  rpc DeleteItem (DeleteItemRequest) returns (DeleteItemResponse);
+}
+
+message ItemDto {
+  string id = 1;
+  string name = 2;
+  int32 quantity = 3;
+  double price = 4;
+}
+
+message GetItemsRequest {
+  repeated string ids = 1;
+}
+
+message GetItemsResponse {
+  repeated ItemDto items = 1;
+}
+
+message AddItemRequest {
+  string name = 1;
+  int32 quantity = 2;
+  double price = 3;
+}
+
+message AddItemResponse {
+  string id = 1;
+}
+
+message DeleteItemRequest {
+  string id = 1;
+}
+
+message DeleteItemResponse {
+  bool success = 1;
+}
+
+message UpdateItemRequest {
+  string id = 1;
+  string name = 2;
+  int32 quantity = 3;
+  double price = 4;
+}
+
+message UpdateItemResponse {
+  ItemDto updated_item = 1;
+}
